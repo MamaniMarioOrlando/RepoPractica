@@ -1,0 +1,13 @@
+<div class="container p-3 my-3 bg-primary text-white">
+    <p>Doc_Brow</p>
+    <div [formGroup]="form">
+        <input class="form-control" label="carta para el doc" formControlName="controlDoc">
+        <div class="text-left pt-1">
+            <button class="btn btn-secondary" (click)="sendMenssage(form.controls.controlDoc.value)">Enviar</button>
+        </div>
+        <div class="text-rigth">
+            <button class="btn btn-secondary" (click)="viewMenssage()">Mostrar carta</button>
+        </div>
+        <h3 *ngIf="menssageToMarty">{{menssageToMarty}}</h3>
+    </div>
+</div>
