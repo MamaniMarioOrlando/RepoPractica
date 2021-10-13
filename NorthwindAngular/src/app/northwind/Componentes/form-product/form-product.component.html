@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row mt-3">
+        <form class="col-sm-6" [formGroup]="formProduct">
+            <h2>Form Product</h2>
+            <div class="form-group mt-2" >
+                <label for="nameProduct" class="exampleInput1">Nombre</label>
+                <input type="text" formControlName="nameProduct" class="form-control" id="nameProduct">
+                <div *ngIf="f.nameProduct.touched && f.nameProduct.errors" class="invalid-feedback">
+                    <div *ngIf="f.nameProduct.errors.required">Nombrerequerido</div>
+                    <div *ngIf="f.nameProduct.errors.maxlingth">El maximo es 40 caracteres</div>
+                </div>
+            </div>
+            <div class="form-group mt-2" >
+                <label for="cantidadPorUnidad" class="exampleInput1">CantidadPorUnidad</label>
+                <input type="text" formControlName="cantidadPorUnidad" class="form-control" id="cantidadPorUnidad">
+                <div *ngIf="f.cantidadPorUnidad.touched && f.cantidadPorUnidad.errors" class="invalid-feedback">
+                    <div *ngIf="f.cantidadPorUnidad.errors.required">Nombrerequerido</div>
+                    <div *ngIf="f.cantidadPorUnidad.errors.maxlingth">El maximo es 40 caracteres</div>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-success" (click)="guardarProducto()">Guardar</button>
+                <button type="reset" class="btn btn-dark" (click)="cancelarFormulario()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
